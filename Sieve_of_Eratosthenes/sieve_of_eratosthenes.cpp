@@ -36,18 +36,17 @@ int main(){
                 sum+=n;
                 stored_prime.push_back(n);
             }
-             n++;
+            n++;
         }else if (n > 10 && (remainder == 1 || remainder == 3 || remainder == 7 || remainder == 9)){
            if(is_prime(stored_prime, n)){
             sum+=n;
             stored_prime.push_back(n);
            }
-                 if (remainder == 1) n+=2;
+                 if (remainder == 1 || remainder == 7 || remainder ==9) n+=2;
             else if (remainder == 3) n+=4;
-            else if (remainder == 7) n+=2;
-            else if (remainder == 9) n+=2;
         }//----------------------------------
       }
+
      std::cout<<"\n\nSum of prime numbers from 1 - "<< limit <<": " << sum << "\n";
 
 return 0;
