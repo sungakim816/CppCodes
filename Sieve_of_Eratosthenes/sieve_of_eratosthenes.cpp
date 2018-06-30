@@ -64,6 +64,6 @@ int main()
         if (n % 2 == 0)n++;
         else n+=2;
     }
-    std::cout << "\nSum of all prime numbers below 2,000,001: " << sum << "\n" << stored_primes.size();
+    std::cout << "\nSum of all prime numbers below 2,000,001: " << sum << "\n";
     return 0;
 }
