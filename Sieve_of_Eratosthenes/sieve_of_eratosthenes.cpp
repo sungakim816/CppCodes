@@ -6,50 +6,64 @@
 #include <math.h>
 #include <ctime>
 #include <stdlib.h>
+#include <sstream>
+void get_primes_below_sr_limit(std::vector <int>& stored_primes, int limit, long long &sum);
+bool is_prime(std::vector <int>& stored_primes, int n);
 
-bool is_prime(std::vector <long long>& stored_prime, long long n){
-    std::vector <long long>::iterator iter;
-    if (n < 2){
+void get_primes_below_sr_limit(std::vector <int>& stored_primes, int limit, long long &sum)
+{   int i = 0;
+    while (i<=limit)
+    {
+        if (is_prime(stored_primes, i))
+        {   sum += i;
+            stored_primes.push_back(i);
+            std::cout << i << "\n";
+        }
+        ++i;
+    }
+}
+
+bool is_prime(std::vector <int>& stored_primes, int n)
+{
+    std::vector <int>::iterator iter;
+    if (n < 2)
+    {
         return false;
-    }else if (n==2 || n==3 || n==5 || n==7){
+    }
+    else if (n == 2)
+    {
         return true;
-    }else{
-        for (iter = stored_prime.begin(); iter != stored_prime.end(); iter++){
-            if (n % *iter == 0){
+    }else
+    {
+        for (iter = stored_primes.begin(); iter != stored_primes.end(); iter++)
+        {
+            if (n % *iter == 0)
+            {
                 return false;
             }
         }
-         return true;
+        return true;
     }
 }
 
 
-int main(){
-     long long sum = 0, n = 2;
-     int remainder = 0, limit = 2000000, position = 1;
-     std::vector <long long> stored_prime(0);
-     std::cout<<"Wait....\n";
-      while (n < limit){
-        remainder = n % 10;
-        if ( n <= 10 ){
-            if (is_prime(stored_prime, n)){
-                sum+=n;
-                stored_prime.push_back(n);
-            }
-            n++;
-        }else if (n > 10 && (remainder == 1 || remainder == 3 || remainder == 7 || remainder == 9)){
-           if(is_prime(stored_prime, n)){
-            sum+=n;
-            stored_prime.push_back(n);
-           }
-                 if (remainder == 1 || remainder == 7 || remainder ==9) n+=2;
-            else if (remainder == 3) n+=4;
-        }//----------------------------------
-      }
-
-     std::cout<<"\n\nSum of prime numbers from 1 - "<< limit <<": " << sum << "\n";
-
-return 0;
+int main()
+{   std::vector <int> stored_primes;
+    long long sum = 0;
+    int n = 0, limit = 2000000, sr_limit = 0;
+    sr_limit = sqrt(limit);
+    get_primes_below_sr_limit(stored_primes, sr_limit, sum);
+    n = sr_limit + 1;
+    while (n<=limit)
+    {
+        if (is_prime(stored_primes, n))
+        {
+            sum += n;
+            std::cout << n << "\n";
+        }
+        if (n % 2 == 0)n++;
+        else n+=2;
+    }
+    std::cout << "\nSum of all prime numbers below 2,000,001: " << sum << "\n" << stored_primes.size();
+    return 0;
 }
-
-
