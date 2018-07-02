@@ -52,8 +52,8 @@ int main()
     long long sum = 0;
     int n = 0, limit = 2000000, sr_limit = 0;
     sr_limit = sqrt(limit);
-    get_primes_below_sr_limit(stored_primes, sr_limit, sum);
-    n = sr_limit + 1;
+    get_primes_below_sr_limit(stored_primes, sr_limit, sum);// get all primes below sr limit
+    n = stored_primes.back() + 2;
     while (n<=limit)
     {
         if (is_prime(stored_primes, n))
@@ -61,8 +61,7 @@ int main()
             sum += n;
             std::cout << n << "\n";
         }
-        if (n % 2 == 0)n++;
-        else n+=2;
+        n+=2;
     }
     std::cout << "\nSum of all prime numbers below 2,000,001: " << sum << "\n";
     return 0;
