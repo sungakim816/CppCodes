@@ -50,7 +50,7 @@ bool is_prime(std::vector <int>& stored_primes, int n)
 int main()
 {   std::vector <int> stored_primes;
     long long sum = 0;
-    int n = 0, limit = 2000000, sr_limit = 0;
+    int n = 0, limit = 3000000, sr_limit = 0;
     sr_limit = sqrt(limit);
     get_primes_below_sr_limit(stored_primes, sr_limit, sum);// get all primes below sr limit
     n = stored_primes.back() + 2;
