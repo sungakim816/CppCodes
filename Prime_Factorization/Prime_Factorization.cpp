@@ -7,7 +7,7 @@
 #include <ctime>
 #include <stdlib.h>
 
-bool is_prime(long long n){
+bool is_prime(long long n){ // To be replaced soon to make it more efficient and logical
 long long  x1 = 2, x2 = 3, y1 = (n-1), y2 = (n-2), q = n / 2;
 if (n < 2){
     return false;
