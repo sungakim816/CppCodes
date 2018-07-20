@@ -7,11 +7,11 @@
 #include <ctime>
 #include <stdlib.h>
 
-void get_primes_below_sr_limit(std::vector <int>& stored_primes, int limit);
-bool is_prime(std::vector <int>& stored_primes, int n);
-void get_prime_factors(std::vector <int>& stored_primes, std::vector <int>& stored_factors, int user_input);
+void get_primes_below_sr_limit(std::vector <unsigned int>& stored_primes, unsigned int limit);
+bool is_prime(std::vector <unsigned int>& stored_primes, unsigned int n);
+void get_prime_factors(std::vector <unsigned int>& stored_primes, std::vector <unsigned int>& stored_factors, unsigned int user_input);
 
-void get_primes_below_sr_limit(std::vector <int>& stored_primes, int limit)
+void get_primes_below_sr_limit(std::vector <unsigned int>& stored_primes, unsigned int limit)
 {   int n = 0;
     while (n<=limit)
     {
@@ -23,9 +23,9 @@ void get_primes_below_sr_limit(std::vector <int>& stored_primes, int limit)
     }
 }
 
-bool is_prime(std::vector <int>& stored_primes, int n)
+bool is_prime(std::vector <unsigned int>& stored_primes, unsigned int n)
 {
-    std::vector <int>::iterator iter;
+    std::vector <unsigned int>::iterator iter;
     if (n < 2)
     {
         return false;
@@ -46,9 +46,9 @@ bool is_prime(std::vector <int>& stored_primes, int n)
     }
 }
 
-void get_prime_factors(std::vector <int>& stored_primes, std::vector <int>& stored_factors, int user_input)
+void get_prime_factors(std::vector <unsigned int>& stored_primes, std::vector <unsigned int>& stored_factors, unsigned int user_input)
 {
-    std::vector<int>::iterator divisor;
+    std::vector<unsigned int>::iterator divisor;
     divisor = stored_primes.begin();
     while (divisor!= stored_primes.end())
     {
@@ -66,12 +66,12 @@ void get_prime_factors(std::vector <int>& stored_primes, std::vector <int>& stor
 }
 
 int main(){
-    int user_input = 0, p_factor = 0, sr_limit = 0;
-    std::vector <int> stored_primes, stored_factors;
+    unsigned int user_input = 454545, p_factor = 0, sr_limit = 0;
+    std::vector <unsigned int> stored_primes, stored_factors;
     std::string option = "";
 
     std::cout<<"\t\t\tPrime Factorization\n\nEnter a number: ";
-    std::cin>>user_input;
+    //std::cin>>user_input;
     sr_limit = sqrt(user_input);
     get_primes_below_sr_limit(stored_primes, sr_limit);
     get_prime_factors(stored_primes, stored_factors, user_input);
