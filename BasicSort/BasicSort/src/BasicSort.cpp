@@ -99,7 +99,7 @@ for(unsigned int i = 0; i < bubble_arr.size() - 1; i++){
 void BasicSort::final_result(std::vector <int> arr)
 {
 printf("\n\nResult: \n\n");
-print_arr(arr);
+BasicSort::print_arr(arr);
 }
 
 void BasicSort::set_arr_size(int n)
