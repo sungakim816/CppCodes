@@ -15,7 +15,7 @@ void get_primes_below_sr_limit(std::vector <int>& stored_primes, int limit, long
     while (i<=limit)
     {
         if (is_prime(stored_primes, i))
-        {   
+        {
             sum += i;
             stored_primes.push_back(i);
         }
@@ -42,8 +42,8 @@ bool is_prime(std::vector <int>& stored_primes, int n)
                 return false;
             }
         }
-        return true;
     }
+    return true;
 }
 
 

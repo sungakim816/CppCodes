@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1540893414 source:c:\users\sunga\documents\repositories\cpp_sample_code\hangaman_console\hangmangame\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<ctime>
+	<cctype>
+	<cstring>
+	<sstream>
+	"Hangman.h"
+
+1540893455 c:\users\sunga\documents\repositories\cpp_sample_code\hangaman_console\hangmangame\hangman.h
+	<iostream>
+	<string>
+
+1540893586 source:c:\users\sunga\documents\repositories\cpp_sample_code\hangaman_console\hangmangame\hangman.cpp
+	"Hangman.h"
+

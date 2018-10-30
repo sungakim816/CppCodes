@@ -35,21 +35,24 @@ for (int i = 0; i < arr_size; i++){
 
 void BasicSort::insertion()
 {
-int temp = 0, step = 1;
-std::vector <int> insertion_arr;
-insertion_arr = object_arr;
-for (unsigned int i = 1; i < insertion_arr.size(); i++){
-    for (int j = i; j > 0; j--){
-        if (insertion_arr[j] < insertion_arr[j-1]){
+    std::vector <int> insertion_arr;
+    insertion_arr = object_arr;
+    int i = 1, j = 0, step = 1;
+    int temp = 0;
+    while (i < (int) insertion_arr.size()) {
+        j = i - 1;
+        while (j >= 0 && insertion_arr[j + 1] < insertion_arr[j]) {
+                        // swapping
             temp = insertion_arr[j];
-            insertion_arr[j] = insertion_arr[j-1];
-            insertion_arr[j-1] = temp;
+            insertion_arr[j] = insertion_arr[j + 1];
+            insertion_arr[j + 1] = temp;
+            j--;
         }
-    }
         printf("\nStep %d: ", step);
         print_arr(insertion_arr);
         step++;
         printf("\n");
+        i++;
     }
     final_result(insertion_arr);
 }
@@ -81,13 +84,18 @@ int temp = 0, step = 1;
 std::vector <int> bubble_arr;
 bubble_arr = object_arr;
 for(unsigned int i = 0; i < bubble_arr.size() - 1; i++){
+        bool isSwapped = false;
     for (unsigned int j = 0; j < bubble_arr.size() - 1; j++){
         if (bubble_arr[j] > bubble_arr[j+1]){
             temp = bubble_arr[j+1];
             bubble_arr[j+1] = bubble_arr[j];
             bubble_arr[j] = temp;
+            isSwapped = true;
             }
         }
+    if (!isSwapped){
+        break;
+    }
     printf("\nStep %d: ", step);
     print_arr(bubble_arr);
     printf("\n");
