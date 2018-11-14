@@ -35,9 +35,13 @@ bool is_prime(std::vector <int>& stored_primes, int n)
         return true;
     }else
     {
+        int sqr = sqrt(n);
         for (iter = stored_primes.begin(); iter != stored_primes.end(); iter++)
         {
-            if (n % *iter == 0)
+            if (*iter > sqr){
+                return true;
+            }
+            else if (n % *iter == 0)
             {
                 return false;
             }
