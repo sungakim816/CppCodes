@@ -7,10 +7,11 @@
 #include <ctime>
 #include <stdlib.h>
 #include <sstream>
-void get_primes_below_sr_limit(std::vector <int>& stored_primes, int limit, long long &sum);
+
+void get_primes_below_sr_limit(std::vector <int>& stored_primes, int limit, int64_t &sum);
 bool is_prime(std::vector <int>& stored_primes, int n);
 
-void get_primes_below_sr_limit(std::vector <int>& stored_primes, int limit, long long &sum)
+void get_primes_below_sr_limit(std::vector <int>& stored_primes, int limit, int64_t &sum)
 {   int i = 0;
     while (i<=limit)
     {
@@ -53,7 +54,7 @@ bool is_prime(std::vector <int>& stored_primes, int n)
 
 int main()
 {   std::vector <int> stored_primes;
-    long long sum = 0;
+    int64_t sum = 0;
     int n = 0, limit = 2000000, sr_limit = 0;
     sr_limit = sqrt(limit);
     get_primes_below_sr_limit(stored_primes, sr_limit, sum);// get all primes below sr limit
