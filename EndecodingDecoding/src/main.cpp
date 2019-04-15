@@ -14,5 +14,6 @@ int main(int argc, char *argv[])
 			  << std::flush;
 	std::cout << "Decoded: " << messageEncDec.decode(outputString) << "\n"
 			  << std::flush;
+	std::cin.get();
 	return 0;
 }
