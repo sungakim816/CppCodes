@@ -24,7 +24,7 @@ private:
     const std::string postfixoperator = "*/+-(";
     const std::string prefixoperator = "*/+-)";
     const unsigned short operatorsvalue[5] = {2, 2, 1, 1, 0};
-    std::vector<char> operatorvector, postfixvector;
+    std::vector<char> operatorvector, postfixvector, prefixvector;
     std::vector<char>::iterator itr;
 
 protected:
