@@ -39,3 +39,38 @@ unsigned int digitSum(unsigned int num)
 {
     return digitSumHelper(num, 0);
 }
+
+void swap(int &var1, int &var2)
+{
+    int temp = var1;
+    var1 = var2;
+    var2 = temp;
+}
+
+void swap(unsigned int &var1, unsigned int &var2)
+{
+    unsigned int temp = var1;
+    var1 = var2;
+    var2 = temp;
+}
+
+void swap(float &var1, float &var2)
+{
+    float temp = var1;
+    var1 = var2;
+    var2 = temp;
+}
+
+void swap(double &var1, double &var2)
+{
+    double temp = var1;
+    var1 = var2;
+    var2 = temp;
+}
+
+void swap(std::string &var1, std::string &var2)
+{
+    std::string temp = var1;
+    var1 = var2;
+    var2 = temp;
+}
