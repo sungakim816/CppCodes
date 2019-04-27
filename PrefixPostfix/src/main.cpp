@@ -26,5 +26,7 @@ int main(int argc, char *argv[])
 		}
 	}
 	inputFile.close();
+	std::cout << "Press Return key to continue..." << std::endl;
+	std::cin.get();
 	return 0;
 }

@@ -30,16 +30,23 @@ bool is_prime(std::vector<unsigned int> &stored_primes, unsigned int n)
 	}
 	else
 	{
+<<<<<<< HEAD
 		iter = stored_primes.begin();
 		while (iter != stored_primes.end())
+=======
+		for (iter = stored_primes.begin(); iter != stored_primes.end(); iter++)
+>>>>>>> c872650105057fb47c7cdfe771f1803e3e4b3cd1
 		{
 			if (n % *iter == 0)
 			{
 				return false;
 			}
+<<<<<<< HEAD
 			iter++;
 			if (*iter > (n >> 1))
 				break;
+=======
+>>>>>>> c872650105057fb47c7cdfe771f1803e3e4b3cd1
 		}
 		return true;
 	}
@@ -80,7 +87,10 @@ void get_prime_factors(std::vector<unsigned int> &stored_primes, std::vector<uns
 int main(int argc, char *argv[])
 {
 	unsigned int input = 0, sr_limit = 0, limit = 200000;
+<<<<<<< HEAD
 	unsigned short unique_factor_count = 4;
+=======
+>>>>>>> c872650105057fb47c7cdfe771f1803e3e4b3cd1
 	unsigned count = 0;
 	std::vector<unsigned int> stored_primes, stored_factors;
 	sr_limit = sqrt(limit);
@@ -95,7 +105,11 @@ int main(int argc, char *argv[])
 			std::copy(
 				stored_factors.begin(), stored_factors.end(),
 				std::inserter(unique_factors, unique_factors.end()));
+<<<<<<< HEAD
 			if (unique_factors.size() == unique_factor_count)
+=======
+			if (unique_factors.size() == 4)
+>>>>>>> c872650105057fb47c7cdfe771f1803e3e4b3cd1
 			{
 				count++;
 			}
@@ -110,10 +124,18 @@ int main(int argc, char *argv[])
 		}
 		unique_factors.clear();
 		stored_factors.clear();
+<<<<<<< HEAD
 		if (count == unique_factor_count)
+=======
+		if (count == 4)
+>>>>>>> c872650105057fb47c7cdfe771f1803e3e4b3cd1
 		{
 			std::cout << (i - 3) << std::endl;
 		}
 	}
 	return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c872650105057fb47c7cdfe771f1803e3e4b3cd1
