@@ -1,0 +1,22 @@
+Account Type: Manager
+First Name: Kim
+Last Name: Sunga
+Meetings Per Week: 12
+Vacations Per Year: 12
+Salary: 12
+--END--
+Account Type: Engineer
+First Name: Kin
+Last Name: Sunga
+Field: Ece
+Years Of Experience: 12
+Know C++: 1
+Salary: 12000
+--END--
+Account Type: Researcher
+First Name: Kio sunga
+Last Name: Sunga
+PhD School: Pup
+Thesis: Pup
+Salary: 1313
+--END--
