@@ -21,13 +21,7 @@ using std::endl;
 using std::flush;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
     EmployeeVectorDatabase* database = new EmployeeVectorDatabase();
-    
-    // Employee* manager = new Manager("Kim", "Sunga", "Manager", 1200, 5, 5);
-    // Employee* engineer = new Engineer("Kinowe", "Sunga", "Engineer", 1500, "Computer", 3, true);
-    // Employee* researcher = new Researcher("Pypert", "Sunga", "Researcher", 2000, "UP Diliman", "Nakakataba ang Lechon");
-    
     enum MenuOptions {AddEmployee = 1, DeleteEmployee, ViewData, Save, Exit};
     bool done = false;
     while(!done) {
@@ -56,8 +50,6 @@ int main(int argc, const char * argv[]) {
                 break;
         }
     }
-
     database->save();
-    
     return 0;
 }
